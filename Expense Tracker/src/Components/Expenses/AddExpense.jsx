@@ -72,8 +72,9 @@ const AddExpense = () => {
 
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Category</label>
+
                     <input
+                        placeholder='Category'
                         type="text"
                         name="category"
                         value={category}
@@ -84,8 +85,9 @@ const AddExpense = () => {
                 </div>
 
                 <div>
-                    <label>Amount</label>
+
                     <input
+                        placeholder='Amount'
                         type="number"
                         name="amount"
                         value={amount}
@@ -96,8 +98,9 @@ const AddExpense = () => {
                 </div>
 
                 <div>
-                    <label>Comments</label>
+
                     <input
+                        placeholder='Comments(Optional)'
                         type="text"
                         name="comments"
                         value={comments}

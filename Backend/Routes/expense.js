@@ -38,42 +38,38 @@ router.get("/", authMiddleware, async (req, res) => {
 });
 
 // Edit Expense
-router.put("/:id", authMiddleware, async (req, res) => {
+router.put("/edit/:id", authMiddleware, async (req, res) => {
   try {
     const { category, amount, comments } = req.body;
-    const expense = await Expense.findById(req.params.id);
 
-    if (!expense) return res.status(404).json({ msg: "Expense not found" });
-    if (expense.user.toString() !== req.user.id)
-      return res.status(401).json({ msg: "Not authorized" });
+    const updatedExpense = await Expense.findByIdAndUpdate(
+      req.params.id,
+      { category, amount, comments },
+      { new: true } // This option returns the updated document
+    );
 
-    // Update expense details
-    expense.category = category || expense.category;
-    expense.amount = amount || expense.amount;
-    expense.comments = comments || expense.comments;
+    if (!updatedExpense)
+      return res.status(404).json({ msg: "Expense not found" });
 
-    await expense.save();
-    res.json(expense);
+    res.json(updatedExpense);
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ msg: "Server Error" });
+    res.status(500).send("Server error");
   }
 });
 
-// Delete Expense
-router.delete("/:id", authMiddleware, async (req, res) => {
+//delete expense
+router.delete("/delete/:id", authMiddleware, async (req, res) => {
   try {
-    const expense = await Expense.findById(req.params.id);
+    const deletedExpense = await Expense.findByIdAndDelete(req.params.id);
 
-    if (!expense) return res.status(404).json({ msg: "Expense not found" });
-    if (expense.user.toString() !== req.user.id)
-      return res.status(401).json({ msg: "Not authorized" });
+    if (!deletedExpense)
+      return res.status(404).json({ msg: "Expense not found" });
 
-    await expense.remove();
-    res.json({ msg: "Expense removed" });
+    res.json({ msg: "Expense deleted", deletedExpense });
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ msg: "Server Error" });
+    res.status(500).send("Server error");
   }
 });
 

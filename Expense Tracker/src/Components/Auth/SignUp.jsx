@@ -74,8 +74,8 @@ const SignUp = () => {
 
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Name</label>
                     <input
+                        placeholder='Name'
                         type="text"
                         name="name"
                         value={name}
@@ -86,8 +86,8 @@ const SignUp = () => {
                 </div>
 
                 <div>
-                    <label>Email</label>
                     <input
+                        placeholder='E-mail'
                         type="email"
                         name="email"
                         value={email}
@@ -98,8 +98,8 @@ const SignUp = () => {
                 </div>
 
                 <div>
-                    <label>Password</label>
                     <input
+                        placeholder='Password'
                         type="password"
                         name="password"
                         value={password}
@@ -110,8 +110,8 @@ const SignUp = () => {
                 </div>
 
                 <div>
-                    <label>Confirm Password</label>
                     <input
+                        placeholder='Confirm Password'
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
@@ -123,6 +123,8 @@ const SignUp = () => {
 
                 <button type="submit">Sign Up</button>
             </form>
+            <p>If you have an existing account please <a href="/signin">Sign In.</a> </p>
+
         </div>
     );
 };

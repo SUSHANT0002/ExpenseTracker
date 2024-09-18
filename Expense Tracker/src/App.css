@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    color: white;
+    background-color: #092337;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* Sidebar container */
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    /* Use vh to cover the viewport height */
+    width: 200px;
+    background-color: #1a1a1a;
+    color: #fff;
+    /* Text color for readability */
+    overflow-y: auto;
+    /* Scroll if content overflows */
+}
+
+/* Sidebar list */
+.sidebar ul {
+    list-style: none;
+    /* Remove default list bullets */
+    padding: 0;
+    margin: 0;
+}
+
+/* Sidebar list items */
+.sidebar li {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    /* Separator between items */
+}
+
+/* Sidebar list links */
+.sidebar a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #fff;
+    /* Text color for links */
+    display: block;
+    /* Make links block-level for full width */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.sidebar a:hover {
+    background-color: #333;
+    /* Background color on hover */
+    color: #fff;
+    /* Ensure text color remains readable */
+}
+
+/* Active link */
+.sidebar a.active {
+    background-color: #007bff;
+    /* Highlight active link */
+    color: #fff;
+}
+
+
+
+
+/* General form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Input and select fields */
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+/* Optional: Error messages */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -12px;
+    margin-bottom: 16px;
+}
+
+/* Optional: Success message */
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: -12px;
+    margin-bottom: 16px;
+}
+
+/* Responsive design for smaller screens */
+
+
+.edit,
+.delete {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
+    background-color: #e1e1da;
+    color: #092337;
+    border: 1px solid white;
+    margin-top: 0;
+}
+
+.edit:hover,
+.delete:hover {
+    background-color: #092337;
+    color: #e1e1da;
+}
+
+
+table,
+td,
+th {
+    text-align: center;
+    padding: 3px;
+    border: 1px solid #fff;
+}

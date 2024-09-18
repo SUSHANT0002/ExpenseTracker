@@ -19,7 +19,7 @@ const SignIn = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const res = await axios.post('http://localhost:5000/api/auth/signin', { email, password });
             localStorage.setItem('token', res.data.token); // Save the token to localStorage
             navigate('/add-expense'); // Redirect to the dashboard
         } catch (err) {
@@ -29,12 +29,13 @@ const SignIn = () => {
     };
 
     return (
-        <div className="signin">
+        <div >
             <h2>Sign In</h2>
-            <form onSubmit={handleSubmit}>
+            <form className="signin" onSubmit={handleSubmit}>
                 <div>
-                    <label>Email</label>
+
                     <input
+                        placeholder='E-mail'
                         type="email"
                         name="email"
                         value={email}
@@ -43,8 +44,9 @@ const SignIn = () => {
                     />
                 </div>
                 <div>
-                    <label>Password</label>
+
                     <input
+                        placeholder='Password'
                         type="password"
                         name="password"
                         value={password}
@@ -54,6 +56,8 @@ const SignIn = () => {
                 </div>
                 <button type="submit">Sign In</button>
             </form>
+
+            <p>If you don't have an existing account please <a href="/signin">Sign Up.</a> </p>
         </div>
     );
 };
