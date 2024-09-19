@@ -7,22 +7,18 @@ body {
     background-color: #092337;
 }
 
-.app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 
 
 /* Sidebar container */
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
+    /* display: flex; */
     right: 0;
-    height: 100vh;
+    height: 100%;
     /* Use vh to cover the viewport height */
     width: 200px;
     background-color: #1a1a1a;
@@ -76,11 +72,15 @@ body {
 
 
 
+.view {
+    overflow-x: auto;
+}
 
 /* General form styles */
 form {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 60%;
+    color: #1a1a1a;
+    /* margin: 0 auto; */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -89,12 +89,7 @@ form {
 }
 
 /* Input and select fields */
-form input[type="text"],
-form input[type="number"],
-form input[type="email"],
-form input[type="password"],
-form textarea,
-form select {
+form input {
     width: 100%;
     padding: 12px;
     margin: 8px 0 16px 0;
@@ -173,4 +168,5 @@ th {
     text-align: center;
     padding: 3px;
     border: 1px solid #fff;
+
 }

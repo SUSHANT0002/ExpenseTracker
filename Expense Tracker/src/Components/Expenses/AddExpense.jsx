@@ -61,8 +61,7 @@ const AddExpense = () => {
     };
 
     return (
-        <div className="add-expense-form">
-            <h2>Add Expense</h2>
+        <div className="add-expense-form  flex justify-center items-center flex-col">
 
             {/* Show success message */}
             {successMessage && <div style={{ color: 'green', marginBottom: '10px' }}>{successMessage}</div>}
@@ -70,7 +69,8 @@ const AddExpense = () => {
             {/* Show server error */}
             {errors.server && <div style={{ color: 'red', marginBottom: '10px' }}>{errors.server}</div>}
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='mb-10 mt-10 w-6/12'>
+                <h2 className='text-3xl font-semibold'>Add Expense</h2>
                 <div>
 
                     <input

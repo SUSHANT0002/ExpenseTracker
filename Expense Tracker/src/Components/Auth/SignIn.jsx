@@ -29,9 +29,10 @@ const SignIn = () => {
     };
 
     return (
-        <div >
-            <h2>Sign In</h2>
-            <form className="signin" onSubmit={handleSubmit}>
+        <div className='flex justify-center items-center flex-col' >
+
+            <form className="signin mb-10 mt-10 w-6/12" onSubmit={handleSubmit}>
+                <h2 className='text-3xl text-center font-semibold'>Sign In</h2>
                 <div>
 
                     <input
@@ -57,7 +58,7 @@ const SignIn = () => {
                 <button type="submit">Sign In</button>
             </form>
 
-            <p>If you don't have an existing account please <a href="/signin">Sign Up.</a> </p>
+            <p>If you don't have an existing account please <a className='text-blue-600' href="/signup">Sign Up.</a> </p>
         </div>
     );
 };

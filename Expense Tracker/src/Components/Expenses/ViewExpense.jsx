@@ -177,9 +177,9 @@ const ViewExpenses = () => {
     };
 
     return (
-        <div>
-            <h2>View Expenses</h2>
+        <div className='view mt-10 flex flex-col justify-center items-center '>
 
+            <h2 className='text-3xl mb-10 '>View Expenses</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
 
             <table className='responsive-table'>
@@ -218,28 +218,29 @@ const ViewExpenses = () => {
 
             {/* Edit Modal/Form */}
             {editExpense && (
-                <div className="modal">
-                    <h3>Edit Expense</h3>
-                    <form onSubmit={handleEditSubmit}>
+                <div className="modal flex justify-center items-center flex-col mt-5 w-full">
+                    <form onSubmit={handleEditSubmit} className='mb-10 mt-10 w-6/12' >
+                        <h3 className='text-3xl mb-5 font-semibold'>Edit Expense</h3>
                         <div>
-                            <label>Category</label>
+
                             <input
+                                placeholder='category'
                                 type="text"
                                 value={editExpense.category}
                                 onChange={(e) => setEditExpense({ ...editExpense, category: e.target.value })}
                             />
                         </div>
                         <div>
-                            <label>Amount</label>
                             <input
+                                placeholder='Amount'
                                 type="number"
                                 value={editExpense.amount}
                                 onChange={(e) => setEditExpense({ ...editExpense, amount: e.target.value })}
                             />
                         </div>
                         <div>
-                            <label>Comments</label>
                             <input
+                                placeholder='Comments'
                                 type="text"
                                 value={editExpense.comments}
                                 onChange={(e) => setEditExpense({ ...editExpense, comments: e.target.value })}

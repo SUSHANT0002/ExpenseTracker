@@ -5,18 +5,18 @@ import SignUp from './Components/Auth/SignUp';
 import SignIn from './Components/Auth/SignIn';
 import AddExpense from './Components/Expenses/AddExpense';
 import ViewExpenses from './Components/Expenses/ViewExpense';
-import ExpenseChart from './components/Expenses/ExpenseChart';
+// import ExpenseChart from './components/Expenses/ExpenseChart';
 import PrivateRoute from './components/PrivateRoute';
 // import EditExpense from './Components/Expenses/EditExpense';
 // import DeleteExpense from './Components/Expenses/DeleteExpense';
 
 function App() {
   return (
-    <div className='app '>
-      <div>
+    <div className='app mt-10 text-center '>
+      <div className='h-full w-full justify-center items-center   flex'>
         <Router>
-          <div>
-            <h1>Expense Tracker</h1>
+          <div className='h-full w-2/3 '>
+            <h1 className='text-5xl '>Expense Tracker</h1>
             <Routes>
               {/* Public Routes */}
               <Route path="/signup" element={<SignUp />} />
@@ -25,17 +25,14 @@ function App() {
               {/* Private Routes */}
               <Route path="/add-expense" element={<PrivateRoute isAuthenticated={true}><AddExpense /></PrivateRoute>} />
               <Route path="/view-expenses" element={<PrivateRoute isAuthenticated={true}><ViewExpenses /></PrivateRoute>} />
-              <Route path="/expense-chart" element={<PrivateRoute isAuthenticated={true}><ExpenseChart /></PrivateRoute>} />
-              {/* <Route path="/edit-expense/:id" element={<PrivateRoute isAuthenticated={true}><EditExpense /></PrivateRoute>} />
-              <Route path="/delete-expense" element={<PrivateRoute isAuthenticated={true}><DeleteExpense /></PrivateRoute>} /> */}
 
 
               {/* Default Route */}
-              <Route index element={
-                <div>
+              <Route index path='*' element={
+                <div className='mt-10 font-bold'>
                   <h2>Welcome to the Expense Tracker</h2>
-                  <p>Please <a href="/login">login</a> to manage your expenses.</p>
-                  <p>If you don't have an account Please <a href="/signup">SignUp.</a></p>
+                  <p>Please <a className='text-blue-600' href="/login">login</a> to manage your expenses.</p>
+                  <p>If you don't have an account Please <a className='text-blue-600' href="/signup">SignUp.</a></p>
                 </div>
               } />
 

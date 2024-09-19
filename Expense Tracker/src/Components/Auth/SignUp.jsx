@@ -63,8 +63,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="signup-form">
-            <h2>Sign Up</h2>
+        <div className="signup-form  flex justify-center items-center flex-col">
 
             {/* Show success message */}
             {successMessage && <div style={{ color: 'green', marginBottom: '10px' }}>{successMessage}</div>}
@@ -72,7 +71,8 @@ const SignUp = () => {
             {/* Show server error */}
             {errors.server && <div style={{ color: 'red', marginBottom: '10px' }}>{errors.server}</div>}
 
-            <form onSubmit={handleSubmit}>
+            <form className='mb-10 mt-10 w-6/12' onSubmit={handleSubmit}>
+                <h2 className='text-3xl font-semibold'>Sign Up</h2>
                 <div>
                     <input
                         placeholder='Name'
@@ -123,7 +123,7 @@ const SignUp = () => {
 
                 <button type="submit">Sign Up</button>
             </form>
-            <p>If you have an existing account please <a href="/signin">Sign In.</a> </p>
+            <p>If you have an existing account please <a className='text-blue-600' href="/signin">Sign In.</a> </p>
 
         </div>
     );
