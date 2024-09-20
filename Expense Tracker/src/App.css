@@ -166,7 +166,8 @@ table,
 td,
 th {
     text-align: center;
-    padding: 3px;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     border: 1px solid #fff;
 
 }
