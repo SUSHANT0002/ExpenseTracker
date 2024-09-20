@@ -5,10 +5,7 @@ import SignUp from './Components/Auth/SignUp';
 import SignIn from './Components/Auth/SignIn';
 import AddExpense from './Components/Expenses/AddExpense';
 import ViewExpenses from './Components/Expenses/ViewExpense';
-// import ExpenseChart from './components/Expenses/ExpenseChart';
 import PrivateRoute from './components/PrivateRoute';
-// import EditExpense from './Components/Expenses/EditExpense';
-// import DeleteExpense from './Components/Expenses/DeleteExpense';
 
 function App() {
   return (
