@@ -31,6 +31,7 @@ body {
 
 /* Sidebar list */
 .sidebar ul {
+    width: 100%;
     list-style: none;
     /* Remove default list bullets */
     padding: 0;
@@ -176,12 +177,18 @@ th {
 .toggle {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 20px;
     display: none;
 }
 
 @media (max-width:850px) {
     .toggle {
         display: flex;
+    }
+}
+
+@media (max-width:380px) {
+    .app {
+        margin-top: 70px;
     }
 }
