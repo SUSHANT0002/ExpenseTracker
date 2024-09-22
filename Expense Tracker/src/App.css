@@ -9,7 +9,6 @@ body {
 
 
 .view {
-    display: block;
     overflow-x: scroll;
 }
 
@@ -175,7 +174,7 @@ th {
 
 
 .toggle {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     margin-right: 20px;
