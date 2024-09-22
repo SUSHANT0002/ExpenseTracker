@@ -1,106 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
-
-// const ViewExpenses = () => {
-//     const [expenses, setExpenses] = useState([]);
-//     const [error, setError] = useState('');
-//     const navigate = useNavigate();
-
-//     useEffect(() => {
-//         const fetchExpenses = async () => {
-//             const token = localStorage.getItem('token');
-//             if (!token) {
-//                 setError('No token found');
-//                 return;
-//             }
-
-//             try {
-//                 const res = await axios.get('http://localhost:5000/api/expenses', {
-//                     headers: {
-//                         Authorization: `Bearer ${token}`
-//                     }
-//                 });
-//                 setExpenses(res.data);
-//             } catch (err) {
-//                 if (err.response && err.response.data) {
-//                     setError(err.response.data.msg || 'Server error');
-//                 } else {
-//                     setError('Network error or server not responding');
-//                 }
-//             }
-//         };
-
-//         fetchExpenses();
-//     }, []);
-
-//     const handleEdit = (id) => {
-//         navigate(`/edit-expense/${id}`);
-//     };
-
-//     const handleDelete = async (id) => {
-//         const token = localStorage.getItem('token');
-//         if (!token) {
-//             setError('No token found');
-//             return;
-//         }
-
-//         try {
-//             await axios.delete(`http://localhost:5000/api/expenses/delete/${id}`, {
-//                 headers: {
-//                     Authorization: `Bearer ${token}`
-//                 }
-//             });
-//             setExpenses(expenses.filter(expense => expense._id !== id));
-//         } catch (err) {
-//             if (err.response && err.response.data) {
-//                 setError(err.response.data.msg || 'Server error');
-//             } else {
-//                 setError('Network error or server not responding');
-//             }
-//         }
-//     };
-
-//     return (
-//         <div className="view-expenses flex flex-auto">
-//             <h2>View Expenses</h2>
-
-//             {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
-
-//             <table>
-//                 <thead>
-//                     <tr>
-//                         <th>Category</th>
-//                         <th>Amount</th>
-//                         <th>Created At</th>
-//                         <th>Updated At</th>
-//                         <th>Comments</th>
-//                         <th>Actions</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     {expenses.map(expense => (
-//                         <tr key={expense._id}>
-//                             <td>{expense.category}</td>
-//                             <td>${expense.amount.toFixed(2)}</td>
-//                             <td>{new Date(expense.createdAt).toLocaleDateString()}</td>
-//                             <td>{new Date(expense.updatedAt).toLocaleDateString()}</td>
-//                             <td>{expense.comments}</td>
-//                             <td>
-//                                 <button onClick={() => handleEdit(expense._id)}>Edit</button>
-//                                 <button onClick={() => handleDelete(expense._id)}>Delete</button>
-//                             </td>
-//                         </tr>
-//                     ))}
-//                 </tbody>
-//             </table>
-//         </div>
-//     );
-// };
-
-// export default ViewExpenses;
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -177,7 +74,7 @@ const ViewExpenses = () => {
     };
 
     return (
-        <div className='view mt-10 flex flex-col justify-center items-center '>
+        <div className='view mt-10 w-full flex flex-col justify-center items-center '>
 
             <h2 className='text-3xl mb-10 '>View Expenses</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}

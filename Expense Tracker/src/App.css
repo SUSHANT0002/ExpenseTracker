@@ -16,6 +16,7 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
+    display: none;
     /* display: flex; */
     right: 0;
     height: 100%;
@@ -73,7 +74,7 @@ body {
 
 
 .view {
-    overflow-x: auto;
+    overflow-x: visible;
 }
 
 /* General form styles */
@@ -169,5 +170,18 @@ th {
     padding: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border: 1px solid #fff;
+}
 
+
+.toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+@media (max-width:850px) {
+    .toggle {
+        display: flex;
+    }
 }

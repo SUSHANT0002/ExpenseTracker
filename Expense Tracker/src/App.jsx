@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useRef, useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUp from './Components/Auth/SignUp';
@@ -8,6 +8,17 @@ import ViewExpenses from './Components/Expenses/ViewExpense';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef();
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      toggleRef.current.style.display = 'none';
+    } else {
+      toggleRef.current.style.display = 'flex';
+    }
+  };
   return (
     <div className='app mt-10 text-center '>
       <div className='h-full w-full justify-center items-center   flex'>
@@ -37,8 +48,18 @@ function App() {
           </div>
         </Router>
       </div>
-      <div className='sidebar' >
+      <div className='toggle'  >
+        <button onClick={toggleSidebar}>
+          {isOpen ? 'Close' : 'Menu'}
+        </button>
+      </div>
+      <div className='sidebar' ref={toggleRef} >
         <ul >
+          <a href="">
+            <li >
+              Close
+            </li>
+          </a>
           <a href="/signup">
             <li>
               SignUp
