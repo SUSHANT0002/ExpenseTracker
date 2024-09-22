@@ -69,7 +69,7 @@ const AddExpense = () => {
             {/* Show server error */}
             {errors.server && <div style={{ color: 'red', marginBottom: '10px' }}>{errors.server}</div>}
 
-            <form onSubmit={handleSubmit} className='mb-10 mt-10 w-6/12'>
+            <form onSubmit={handleSubmit} className='mb-10 mt-10 '>
                 <h2 className='text-3xl font-semibold'>Add Expense</h2>
                 <div>
 

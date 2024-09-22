@@ -71,7 +71,7 @@ const SignUp = () => {
             {/* Show server error */}
             {errors.server && <div style={{ color: 'red', marginBottom: '10px' }}>{errors.server}</div>}
 
-            <form className='mb-10 mt-10 w-6/12' onSubmit={handleSubmit}>
+            <form className='mb-10 mt-10 ' onSubmit={handleSubmit}>
                 <h2 className='text-3xl font-semibold'>Sign Up</h2>
                 <div>
                     <input

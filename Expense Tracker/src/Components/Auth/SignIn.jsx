@@ -29,32 +29,31 @@ const SignIn = () => {
     };
 
     return (
-        <div className='flex justify-center items-center flex-col' >
+        <div className='flex justify-center  items-center flex-col' >
 
-            <form className="signin mb-10 mt-10 w-6/12" onSubmit={handleSubmit}>
+            <form className="signin  mb-10 mt-10" onSubmit={handleSubmit}>
                 <h2 className='text-3xl text-center font-semibold'>Sign In</h2>
-                <div>
 
-                    <input
-                        placeholder='E-mail'
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
 
-                    <input
-                        placeholder='Password'
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+                <input
+                    placeholder='E-mail'
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={handleChange}
+                    required
+                />
+
+
+                <input
+                    placeholder='Password'
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                    required
+                />
+
                 <button type="submit">Sign In</button>
             </form>
 

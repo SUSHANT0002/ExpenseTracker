@@ -74,7 +74,7 @@ const ViewExpenses = () => {
     };
 
     return (
-        <div className='view mt-10 w-full flex flex-col justify-center items-center '>
+        <div className='view mt-10 w-full  flex-col  justify-center items-center '>
 
             <h2 className='text-3xl mb-10 '>View Expenses</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -116,7 +116,7 @@ const ViewExpenses = () => {
             {/* Edit Modal/Form */}
             {editExpense && (
                 <div className="modal flex justify-center items-center flex-col mt-5 w-full">
-                    <form onSubmit={handleEditSubmit} className='mb-10 mt-10 w-6/12' >
+                    <form onSubmit={handleEditSubmit} className='mb-10 mt-10 ' >
                         <h3 className='text-3xl mb-5 font-semibold'>Edit Expense</h3>
                         <div>
 
