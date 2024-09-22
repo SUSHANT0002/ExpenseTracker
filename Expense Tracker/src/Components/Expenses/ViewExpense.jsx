@@ -115,8 +115,8 @@ const ViewExpenses = () => {
 
             {/* Edit Modal/Form */}
             {editExpense && (
-                <div className="modal   mt-5 w-full">
-                    <form onSubmit={handleEditSubmit} className='mb-10 mt-10 ' >
+                <div className="modal lg:w-1/2 mt-5 w-full">
+                    <form onSubmit={handleEditSubmit} className=' mb-10 mt-10 ' >
                         <h3 className='text-3xl mb-5 font-semibold'>Edit Expense</h3>
                         <div>
 

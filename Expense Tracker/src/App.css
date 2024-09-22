@@ -8,10 +8,6 @@ body {
 }
 
 
-.view {
-    overflow-x: scroll;
-}
-
 
 
 
@@ -184,6 +180,11 @@ th {
 @media (max-width:850px) {
     .toggle {
         display: flex;
+    }
+
+
+    .view {
+        overflow-x: scroll;
     }
 }
 
