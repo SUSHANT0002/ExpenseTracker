@@ -110,6 +110,7 @@ const AddExpense = () => {
 
                 <button type="submit">Add Expense</button>
             </form>
+
         </div>
     );
 };
